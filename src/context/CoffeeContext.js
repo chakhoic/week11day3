@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import SelectedCoffeeBean from '../components/SelectedCoffeeBean';
 import coffeeBeans from '../mockData/coffeeBeans.json';
 
 export const CoffeeContext = createContext();
@@ -14,12 +15,8 @@ export default function CoffeeProvider(props) {
   };
 
   return (
-    <CoffeeContext.Provider
-      value={{
-        coffeeBean,
-        setCoffeeBeanId
-      }}
-    >
+    <CoffeeContext.Provider value={{coffeeBean,setCoffeeBeanId}}>
+      {/* <SelectedCoffeeBean /> */}
       {props.children}
     </CoffeeContext.Provider>
   );
